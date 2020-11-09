@@ -1,4 +1,6 @@
+import lineEndingsTransformer from './transformers/line-endings';
 import stripTransformer from './transformers/strip';
+import escapeTransformer from './transformers/escape-html';
 
 import linkParser from './parsers/links';
 import headersParser from './parsers/headers';
@@ -14,8 +16,14 @@ const md2html = {};
 md2html.convert = (markdown) => {
   let current = markdown;
 
+  // change line endings to \n
+  current = lineEndingsTransformer(current);
+
   // strip extra newlines
   current = stripTransformer(current);
+
+  // excape html tags and things like ", &
+  current = escapeTransformer(current);
 
   // parse inline links
   current = linkParser(current);
