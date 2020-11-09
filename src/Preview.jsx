@@ -10,7 +10,7 @@ const Preview = () => {
 
   const inputChanged = async (e) => {
     setInput(e.target.value);
-    const convertedHTML = md2html.convertFast(e.target.value);
+    const convertedHTML = md2html.convert(e.target.value);
     setHTML(convertedHTML);
   };
 
@@ -48,11 +48,10 @@ const Preview = () => {
           maxH='100%'
           textAlign='left'
           p={4}
-          pt={0}
           overflow='scroll'
         >
           {showHTML ? (
-            <Text>{html}</Text>
+            <Text mt='0em'>{html}</Text>
           ) : (
             <div dangerouslySetInnerHTML={{ __html: html }} />
           )}
