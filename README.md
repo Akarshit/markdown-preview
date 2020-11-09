@@ -2,6 +2,10 @@
 
 A small react app to show the live preview of the markdown. Only supports text, links and headings for now.
 
+## Demo
+
+![Sample](public/sample.gif)
+
 ## Installation
 
 1. Clone the repository using `git clone https://github/akarshit/markdown-preview.git`
