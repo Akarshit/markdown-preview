@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Input, Flex, Text, Box, Icon } from '@chakra-ui/core';
 
+import md2html from './md2html';
+
 const Preview = () => {
   const [input, setInput] = useState('');
   const [showHTML, setShowHTML] = useState(false);
@@ -8,7 +10,8 @@ const Preview = () => {
 
   const inputChanged = async (e) => {
     setInput(e.target.value);
-    setHTML('<div>Test HTML</div>');
+    const convertedHTML = md2html.convertFast(e.target.value);
+    setHTML(convertedHTML);
   };
 
   return (
