@@ -10,7 +10,7 @@ const Preview = () => {
 
   const inputChanged = async (e) => {
     setInput(e.target.value);
-    const convertedHTML = md2html.convert(e.target.value);
+    const convertedHTML = md2html.convertFast(e.target.value);
     setHTML(convertedHTML);
   };
 

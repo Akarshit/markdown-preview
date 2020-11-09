@@ -37,7 +37,19 @@ md2html.convert = (markdown) => {
   return current;
 };
 
+/**
+ * A faster methood to convert the markdown into HTML
+ * It relies on the fact that the whole markdown
+ * would be supplied as the parameter
+ *
+ * If this input would have been from a file, we could parse
+ * line by line, and keep procssing in parallel
+ * @param {string} markdown
+ */
 md2html.convertFast = (markdown) => {
+  // Markdown(for our use-case) is independent
+  // after split on \n\n
+
   const chunks = markdown.split(/\n\n/);
   const htmls = chunks.map((c) => md2html.convert(c));
   return htmls.join('');
