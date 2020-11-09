@@ -1,4 +1,4 @@
-const replacer = (match, before, text, link, offset, string) => {
+const replacer = (match, before, text, link) => {
   if (link.indexOf(' ') === -1) {
     return `${before}<a href="${link}">${text}</a>`;
   }

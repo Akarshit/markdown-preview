@@ -1,4 +1,4 @@
-const replacer = (match, line, offset, string) => {
+const replacer = () => {
   return `<br>`;
 };
 
