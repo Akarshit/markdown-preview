@@ -1,5 +1,5 @@
 const replacer = () => {
-  return `<br>`;
+  return '<br>';
 };
 
 /**
