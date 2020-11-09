@@ -37,4 +37,10 @@ md2html.convert = (markdown) => {
   return current;
 };
 
+md2html.convertFast = (markdown) => {
+  const chunks = markdown.split(/\n\n/);
+  const htmls = chunks.map((c) => md2html.convert(c));
+  return htmls.join('');
+};
+
 export default md2html;
