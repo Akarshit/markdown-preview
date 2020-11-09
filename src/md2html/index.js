@@ -2,6 +2,7 @@ import stripTransformer from './transformers/strip';
 
 import linkParser from './parsers/links';
 import headersParser from './parsers/headers';
+import paraParser from './parsers/paras';
 
 const md2html = {};
 
@@ -21,6 +22,9 @@ md2html.convert = (markdown) => {
 
   // parse h1-h6 headings
   current = headersParser(current);
+
+  // parse the paragraphs
+  current = paraParser(current);
 
   return current;
 };

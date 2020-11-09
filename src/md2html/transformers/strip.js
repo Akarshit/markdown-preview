@@ -4,9 +4,9 @@
  *
  * @param {string} markdown
  */
-const parser = (markdown) => {
+const transformer = (markdown) => {
   let html = markdown.replace(/^[ \t]+$/gm, '');
   return html;
 };
 
-export default parser;
+export default transformer;
